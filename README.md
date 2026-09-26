@@ -47,17 +47,43 @@ Sephiria\
 
 任一方式安装后启动游戏，插件自动加载；日志见 `BepInEx/LogOutput.log`。
 
-安装后在游戏内「选项」界面打开「MOD 设置」即可调整，或直接编辑
-`BepInEx/config/com.sephiriamods.enhancements.cfg`。
-
 ## 配置
+
+配置通过编辑文件完成，无需额外插件。
+
+首次启动游戏后会自动生成配置文件：
+
+```
+<游戏根目录>\BepInEx\config\com.sephiriamods.enhancements.cfg
+```
+
+用记事本打开，修改后保存，重启游戏生效。文件内容如下：
+
+```ini
+[Aim]
+
+## 键鼠自瞄的搜索半径（格），角度搜索和附近目标兜底都使用该范围。
+# Setting type: Single
+# Default value: 15
+MaxRange = 15
+
+[General]
+
+## 键鼠模式下模拟手柄自瞄：优先选择鼠标方向上的敌人，无方向目标时选择附近敌人。
+# Setting type: Boolean
+# Default value: true
+Enabled = true
+```
 
 | 配置项 | 默认值 | 说明 |
 | --- | --- | --- |
-| `General/Enabled` | `true` | 是否启用键鼠自瞄 |
-| `Aim/MaxRange` | `15` | 自瞄搜索半径（格），范围 5~30 |
+| `General/Enabled` | `true` | 是否启用键鼠自瞄，填 `true` 开启、`false` 关闭 |
+| `Aim/MaxRange` | `15` | 自瞄搜索半径（格），可填 5~30 |
 
-> `Aim/MaxRange` 同时作用于"方向搜索"和"附近目标兜底"两个阶段。
+两点注意：
+
+- 只改等号右边的内容，不要改动 `[Aim]`、`[General]` 这些段落名和 `MaxRange`、`Enabled` 这些键名。
+- 若不小心改坏，直接删除该 `.cfg` 文件并重启游戏，会重新生成一份默认配置。
 
 ## 编译
 
