@@ -1,0 +1,32 @@
+# 构建产物
+bin/
+obj/
+*.user
+*.suo
+
+# IDE
+.vs/
+.idea/
+.vscode/
+
+# 游戏本体与运行环境（不要提交）
+BepInEx/
+Sephiria_Data/
+MonoBleedingEdge/
+AddOns/
+D3D12/
+Decompiled/
+.tools/
+
+# 游戏本体与启动器文件
+Sephiria.exe
+UnityPlayer.dll
+UnityCrashHandler64.exe
+winhttp.dll
+doorstop_config.ini
+.doorstop_version
+THIRD-PARTY-LICENSES.txt
+
+# 日志与缓存
+*.log
+*.cache
