@@ -18,13 +18,34 @@
 
 ## 安装
 
-前置条件：游戏已安装 BepInEx 6（Mono x64）。
+### 方式一：完整安装包（推荐）
 
-1. 取本仓库 [`dist/SephiriaEnhancements.dll`](dist/SephiriaEnhancements.dll)（预编译版本，对应 `version.txt` 中当前版本）。
-2. 放到 `<游戏根目录>/BepInEx/plugins/`。
-3. 启动游戏，插件自动加载；日志见 `BepInEx/LogOutput.log`。
+到 [Releases](https://github.com/Kagarinokirie1/SephiriaAutoAim/releases) 下载最新版的
+`SephiriaAutoAim-v*.zip`，解压到游戏根目录（与 `Sephiria.exe` 同级）即可。
 
-也可以克隆仓库后自行编译，见下方[编译](#编译)一节。
+压缩包已内含 BepInEx 6 运行库与自瞄插件，无需另行安装前置，解压后目录结构为：
+
+```
+Sephiria\
+  winhttp.dll
+  doorstop_config.ini
+  .doorstop_version
+  BepInEx\
+    core\
+    config\
+    plugins\SephiriaEnhancements.dll
+```
+
+### 方式二：已有 BepInEx 环境
+
+若你已经装好 BepInEx 6，只需取 [`dist/SephiriaEnhancements.dll`](dist/SephiriaEnhancements.dll)
+放进 `<游戏根目录>/BepInEx/plugins/`，不要覆盖整个 `BepInEx` 文件夹。
+
+### 方式三：自行编译
+
+克隆仓库后按下方[编译](#编译)一节自行构建。
+
+任一方式安装后启动游戏，插件自动加载；日志见 `BepInEx/LogOutput.log`。
 
 安装后在游戏内「选项」界面打开「MOD 设置」即可调整，或直接编辑
 `BepInEx/config/com.sephiriamods.enhancements.cfg`。
