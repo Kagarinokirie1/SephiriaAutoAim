@@ -20,9 +20,11 @@
 
 前置条件：游戏已安装 BepInEx 6（Mono x64）。
 
-1. 编译或下载得到 `SephiriaEnhancements.dll`。
+1. 取本仓库 [`dist/SephiriaEnhancements.dll`](dist/SephiriaEnhancements.dll)（预编译版本，对应 `version.txt` 中当前版本）。
 2. 放到 `<游戏根目录>/BepInEx/plugins/`。
 3. 启动游戏，插件自动加载；日志见 `BepInEx/LogOutput.log`。
+
+也可以克隆仓库后自行编译，见下方[编译](#编译)一节。
 
 安装后在游戏内「选项」界面打开「MOD 设置」即可调整，或直接编辑
 `BepInEx/config/com.sephiriamods.enhancements.cfg`。
@@ -54,6 +56,8 @@ dotnet build src/SephiriaEnhancements/SephiriaEnhancements.csproj -c Release
 ```
 
 编译产物在 `src/SephiriaEnhancements/bin/Release/net472/SephiriaEnhancements.dll`。
+
+发布新版本时，把该产物复制到 `dist/SephiriaEnhancements.dll` 一并提交，安装者即可直接取用。
 
 ## 工作原理
 
